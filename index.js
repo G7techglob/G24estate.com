@@ -1,10 +1,3 @@
-// MOBILE MENU
-const menuBtn = document.getElementById('menu-btn');
-const navbar = document.getElementById('navbar');
-
-menuBtn.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
 // ===============================
 // MOBILE MENU TOGGLE
 // ===============================
@@ -17,8 +10,9 @@ menuBtn.addEventListener('click', () => {
 
   // Save menu state in browser history
   if (navbar.classList.contains('active')) {
-    history.pushState({menuOpen:true}, "");
+    history.pushState({ menuOpen: true }, "");
   }
+
 });
 
 
@@ -32,10 +26,6 @@ window.addEventListener("popstate", function () {
 
     navbar.classList.remove("active");
 
-  } else {
-
-    // Return previous page normally
-    history.back();
-
   }
+
 });
